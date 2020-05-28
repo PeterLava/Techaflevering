@@ -38,8 +38,11 @@ def keepAlive():
         UDPClientSocket.sendto(autoMsg, serverAddressPort)
         time.sleep(3)
 
+
 #seperate thread for keepAlive function
 keepAliveThread = threading.Thread(name="keepAlive", target=keepAlive)
+
+
 if COptionFile.read() == "True":
     keepAliveThread.start()
 clientChat(UDPClientSocket)

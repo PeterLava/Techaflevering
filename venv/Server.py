@@ -39,9 +39,9 @@ def chat(message, address):
                 print("UDP server up and listening")
                 break
 
-        clientMsg = "C: com-" + i + " Message: {}".format(message)
+        clientMsg = "Message: {}".format(message)
         clientIP = "Client IP Address:{}".format(address)
-        print(clientMsg)
+        print("C: com-", i, clientMsg)
         print(clientIP)
         UDPServerSocket.sendto(bytesToSend, address)
         time.sleep(ammPck)
